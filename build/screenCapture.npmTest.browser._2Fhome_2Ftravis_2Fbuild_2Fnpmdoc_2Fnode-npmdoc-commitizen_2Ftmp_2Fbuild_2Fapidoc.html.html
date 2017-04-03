@@ -1,0 +1,693 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/commitizen/cz-cli">commitizen (v2.9.6)</a>
+</h1>
+<h4>Git commit, but play nice with conventions.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.commitizen">module commitizen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.commit">
+            function <span class="apidocSignatureSpan">commitizen.</span>commit
+            <span class="apidocSignatureSpan">(sh, inquirer, repoPath, prompter, options, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.init">
+            function <span class="apidocSignatureSpan">commitizen.</span>init
+            <span class="apidocSignatureSpan">(sh, repoPath, adapterNpmName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">commitizen.</span>adapter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">commitizen.</span>cache</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">commitizen.</span>configLoader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">commitizen.</span>staging</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.commitizen.adapter">module commitizen.adapter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.addPathToAdapterConfig">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>addPathToAdapterConfig
+            <span class="apidocSignatureSpan">(sh, cliPath, repoPath, adapterNpmName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.generateNpmInstallAdapterCommand">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>generateNpmInstallAdapterCommand
+            <span class="apidocSignatureSpan">(stringMappings, adapterNpmName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.getNearestNodeModulesDirectory">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNearestNodeModulesDirectory
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.getNearestProjectRootDirectory">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNearestProjectRootDirectory
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.getNpmInstallStringMappings">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNpmInstallStringMappings
+            <span class="apidocSignatureSpan">(save, saveDev, saveExact, force)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.getPrompter">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>getPrompter
+            <span class="apidocSignatureSpan">(adapterPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.adapter.resolveAdapterPath">
+            function <span class="apidocSignatureSpan">commitizen.adapter.</span>resolveAdapterPath
+            <span class="apidocSignatureSpan">(inboundAdapterPath)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.commitizen.cache">module commitizen.cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.cache.getCacheValueSync">
+            function <span class="apidocSignatureSpan">commitizen.cache.</span>getCacheValueSync
+            <span class="apidocSignatureSpan">(cachePath, repoPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.cache.readCacheSync">
+            function <span class="apidocSignatureSpan">commitizen.cache.</span>readCacheSync
+            <span class="apidocSignatureSpan">(cachePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.cache.setCacheValueSync">
+            function <span class="apidocSignatureSpan">commitizen.cache.</span>setCacheValueSync
+            <span class="apidocSignatureSpan">(cachePath, key, value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.commitizen.configLoader">module commitizen.configLoader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.configLoader.load">
+            function <span class="apidocSignatureSpan">commitizen.configLoader.</span>load
+            <span class="apidocSignatureSpan">(config, cwd)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.commitizen.staging">module commitizen.staging</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.commitizen.staging.isClean">
+            function <span class="apidocSignatureSpan">commitizen.staging.</span>isClean
+            <span class="apidocSignatureSpan">(repoPath, done)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.commitizen" id="apidoc.module.commitizen">module commitizen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.commit" id="apidoc.element.commitizen.commit">
+        function <span class="apidocSignatureSpan">commitizen.</span>commit
+        <span class="apidocSignatureSpan">(sh, inquirer, repoPath, prompter, options, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function commit(sh, inquirer, repoPath, prompter, options, done) {
+  var cacheDirectory = (0, _cachedir2.default)('commitizen');
+  var cachePath = _path2.default.join(cacheDirectory, 'commitizen.json');
+
+  (0, _fsExtra.ensureDir)(cacheDirectory, function (error) {
+    if (error) {
+      console.error("Couldn't create commitizen cache directory: ", error);
+      // TODO: properly handle error?
+    } else {
+      if (options.retryLastCommit) {
+
+        console.log('Retrying last commit attempt.');
+
+        // We want to use the last commit instead of the current commit,
+        // so lets override some options using the values from cache.
+
+        var _cache$getCacheValueS = cache.getCacheValueSync(cachePath, repoPath),
+            retryOptions = _cache$getCacheValueS.options,
+            retryOverrideOptions = _cache$getCacheValueS.overrideOptions,
+            retryTemplate = _cache$getCacheValueS.template;
+
+        dispatchGitCommit(sh, repoPath, retryTemplate, retryOptions, retryOverrideOptions, done);
+      } else {
+        // Get user input -- side effect that is hard to test
+        prompter(inquirer, function (error, template, overrideOptions) {
+          // Allow adapters to error out
+          // (error: Error?, template: String, overrideOptions: Object)
+          if (!(error instanceof Error)) {
+            overrideOptions = template;
+            template = error;
+            error = null;
+          }
+
+          if (error) {
+            return done(error);
+          }
+
+          // We don't want to add retries to the cache, only actual commands
+          cache.setCacheValueSync(cachePath, repoPath, { template: template, options: options, overrideOptions: overrideOptions });
+          dispatchGitCommit(sh, repoPath, template, options, overrideOptions, done);
+        });
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.init" id="apidoc.element.commitizen.init">
+        function <span class="apidocSignatureSpan">commitizen.</span>init
+        <span class="apidocSignatureSpan">(sh, repoPath, adapterNpmName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(sh, repoPath, adapterNpmName) {
+  var _ref = arguments.length &gt; 3 &amp;&amp; arguments[3] !== undefined ? arguments[3] : defaultInitOptions,
+      _ref$save = _ref.save,
+      save = _ref$save === undefined ? false : _ref$save,
+      _ref$saveDev = _ref.saveDev,
+      saveDev = _ref$saveDev === undefined ? true : _ref$saveDev,
+      _ref$saveExact = _ref.saveExact,
+      saveExact = _ref$saveExact === undefined ? false : _ref$saveExact,
+      _ref$force = _ref.force,
+      force = _ref$force === undefined ? false : _ref$force;
+
+  // Don't let things move forward if required args are missing
+  checkRequiredArguments(sh, repoPath, adapterNpmName);
+
+  // Move to the correct directory so we can run commands
+  sh.cd(repoPath);
+
+  // Load the current adapter config
+  var adapterConfig = loadAdapterConfig();
+
+  // Get the npm string mappings based on the arguments provided
+  var stringMappings = getNpmInstallStringMappings(save, saveDev, saveExact, force);
+
+  // Generate a string that represents the npm install command
+  var installAdapterCommand = generateNpmInstallAdapterCommand(stringMappings, adapterNpmName);
+
+  // Check for previously installed adapters
+  if (adapterConfig &amp;&amp; adapterConfig.path &amp;&amp; adapterConfig.path.length &gt; 0) {
+
+    // console.log(`
+    //   Previous adapter detected!
+    // `);
+
+    if (!force) {
+
+      // console.log(`
+      //   Previous adapter detected!
+      // `);
+
+      throw 'A previous adapter is already configured. Use --force to override';
+    } else {
+      // Override it
+      try {
+        (0, _util.executeShellCommand)(sh, repoPath, installAdapterCommand);
+        addPathToAdapterConfig(sh, CLI_PATH, repoPath, adapterNpmName);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  } else {
+
+    // console.log(`
+    //   No previous adapter was detected
+    // `);
+
+    try {
+
+      (0, _util.executeShellCommand)(sh, repoPath, installAdapterCommand);
+      addPathToAdapterConfig(sh, CLI_PATH, repoPath, adapterNpmName);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.commitizen.adapter" id="apidoc.module.commitizen.adapter">module commitizen.adapter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.addPathToAdapterConfig" id="apidoc.element.commitizen.adapter.addPathToAdapterConfig">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>addPathToAdapterConfig
+        <span class="apidocSignatureSpan">(sh, cliPath, repoPath, adapterNpmName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addPathToAdapterConfig(sh, cliPath, repoPath, adapterNpmName) {
+
+  var commitizenAdapterConfig = {
+    config: {
+      commitizen: {
+        path: './node_modules/' + adapterNpmName
+      }
+    }
+  };
+
+  var packageJsonPath = _path2.default.join(getNearestProjectRootDirectory(), 'package.json');
+  var packageJsonString = _fs2.default.readFileSync(packageJsonPath, 'utf-8');
+  // tries to detect the indentation and falls back to a default if it can't
+  var indent = (0, _detectIndent2.default)(packageJsonString).indent || '  ';
+  var packageJsonContent = JSON.parse(packageJsonString);
+  var newPackageJsonContent = '';
+  if (_lodash2.default.get(packageJsonContent, 'config.commitizen.path') !== adapterNpmName) {
+    newPackageJsonContent = _lodash2.default.merge(packageJsonContent, commitizenAdapterConfig);
+  }
+  _fs2.default.writeFileSync(packageJsonPath, JSON.stringify(newPackageJsonContent, null, indent) + '\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.generateNpmInstallAdapterCommand" id="apidoc.element.commitizen.adapter.generateNpmInstallAdapterCommand">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>generateNpmInstallAdapterCommand
+        <span class="apidocSignatureSpan">(stringMappings, adapterNpmName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateNpmInstallAdapterCommand(stringMappings, adapterNpmName) {
+
+  // Start with an initial npm install command
+  var installAdapterCommand = 'npm install ' + adapterNpmName;
+
+  // Append the neccesary arguments to it based on user preferences
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = stringMappings.entries()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next
+()).done); _iteratorNormalCompletion = true) {
+      var _step$value = _slicedToArray(_step.value, 2),
+          key = _step$value[0],
+          value = _step$value[1];
+
+      if (value) {
+        installAdapterCommand = installAdapterCommand + ' ' + value;
+      }
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  return installAdapterCommand;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.getNearestNodeModulesDirectory" id="apidoc.element.commitizen.adapter.getNearestNodeModulesDirectory">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNearestNodeModulesDirectory
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNearestNodeModulesDirectory(options) {
+
+  // Get the nearest node_modules directories to the current working directory
+  var nodeModulesDirectories = (0, _findNodeModules2.default)(options);
+
+  // Make sure we find a node_modules folder
+
+<span class="apidocCodeCommentSpan">  /* istanbul ignore else */
+</span>  if (nodeModulesDirectories &amp;&amp; nodeModulesDirectories.length &gt; 0) {
+    return nodeModulesDirectories[0];
+  } else {
+    console.error('Error: Could not locate node_modules in your project\'s root directory. Did you forget to npm init or npm install
+?');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.getNearestProjectRootDirectory" id="apidoc.element.commitizen.adapter.getNearestProjectRootDirectory">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNearestProjectRootDirectory
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNearestProjectRootDirectory(options) {
+  return _path2.default.join(process.cwd(), getNearestNodeModulesDirectory(options), '/../');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.getNpmInstallStringMappings" id="apidoc.element.commitizen.adapter.getNpmInstallStringMappings">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>getNpmInstallStringMappings
+        <span class="apidocSignatureSpan">(save, saveDev, saveExact, force)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getNpmInstallStringMappings(save, saveDev, saveExact, force) {
+  return new Map().set('save', save &amp;&amp; !saveDev ? '--save' : undefined).set('saveDev', saveDev ? '--save-dev' : undefined).set('
+saveExact', saveExact ? '--save-exact' : undefined).set('force', force ? '--force' : undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.getPrompter" id="apidoc.element.commitizen.adapter.getPrompter">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>getPrompter
+        <span class="apidocSignatureSpan">(adapterPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getPrompter(adapterPath) {
+  // Resolve the adapter path
+  var resolvedAdapterPath = resolveAdapterPath(adapterPath);
+
+  // Load the adapter
+  var adapter = require(resolvedAdapterPath);
+
+<span class="apidocCodeCommentSpan">  /* istanbul ignore next */
+</span>  if (adapter &amp;&amp; adapter.prompter &amp;&amp; (0, _util.isFunction)(adapter.prompter)) {
+    return adapter.prompter;
+  } else if (adapter &amp;&amp; adapter.default &amp;&amp; adapter.default.prompter &amp;&amp; (0, _util.isFunction)(adapter.default.prompter)) {
+    return adapter.default.prompter;
+  } else {
+    throw "Could not find prompter method in the provided adapter module: " + adapterPath;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.adapter.resolveAdapterPath" id="apidoc.element.commitizen.adapter.resolveAdapterPath">
+        function <span class="apidocSignatureSpan">commitizen.adapter.</span>resolveAdapterPath
+        <span class="apidocSignatureSpan">(inboundAdapterPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resolveAdapterPath(inboundAdapterPath) {
+  // Check if inboundAdapterPath is a path or node module name
+  var parsed = _path2.default.parse(inboundAdapterPath);
+  var isPath = parsed.dir.length &gt; 0 &amp;&amp; parsed.dir.charAt(0) !== "@";
+
+  // Resolve from the root of the git repo if inboundAdapterPath is a path
+  var absoluteAdapterPath = isPath ? _path2.default.resolve(getGitRootPath(), inboundAdapterPath) : inboundAdapterPath;
+
+  try {
+    // try to resolve the given path
+    return require.resolve(absoluteAdapterPath);
+  } catch (error) {
+    error.message = "Could not resolve " + absoluteAdapterPath + ". " + error.message;
+    throw error;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.commitizen.cache" id="apidoc.module.commitizen.cache">module commitizen.cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.cache.getCacheValueSync" id="apidoc.element.commitizen.cache.getCacheValueSync">
+        function <span class="apidocSignatureSpan">commitizen.cache.</span>getCacheValueSync
+        <span class="apidocSignatureSpan">(cachePath, repoPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getCacheValueSync(cachePath, repoPath) {
+  try {
+    var cache = readCacheSync(cachePath);
+    return cache[repoPath];
+  } catch (e) {
+    return;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.cache.readCacheSync" id="apidoc.element.commitizen.cache.readCacheSync">
+        function <span class="apidocSignatureSpan">commitizen.cache.</span>readCacheSync
+        <span class="apidocSignatureSpan">(cachePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readCacheSync(cachePath) {
+  return JSON.parse(_fs2.default.readFileSync(cachePath, 'utf8'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.cache.setCacheValueSync" id="apidoc.element.commitizen.cache.setCacheValueSync">
+        function <span class="apidocSignatureSpan">commitizen.cache.</span>setCacheValueSync
+        <span class="apidocSignatureSpan">(cachePath, key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setCacheValueSync(cachePath, key, value) {
+  var originalCache;
+  try {
+    originalCache = readCacheSync(cachePath);
+  } catch (e) {
+    originalCache = {};
+  }
+  var newCache = _lodash2.default.assign(originalCache, _defineProperty({}, key, value));
+  _fs2.default.writeFileSync(cachePath, JSON.stringify(newCache, null, '  '));
+  return newCache;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.commitizen.configLoader" id="apidoc.module.commitizen.configLoader">module commitizen.configLoader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.configLoader.load" id="apidoc.element.commitizen.configLoader.load">
+        function <span class="apidocSignatureSpan">commitizen.configLoader.</span>load
+        <span class="apidocSignatureSpan">(config, cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function load(config, cwd) {
+  return (0, _configLoader.loader)(configs, config, cwd);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.commitizen.staging" id="apidoc.module.commitizen.staging">module commitizen.staging</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.commitizen.staging.isClean" id="apidoc.element.commitizen.staging.isClean">
+        function <span class="apidocSignatureSpan">commitizen.staging.</span>isClean
+        <span class="apidocSignatureSpan">(repoPath, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isClean(repoPath, done) {
+  (0, _child_process.exec)('git diff --cached --name-only', {
+    maxBuffer: Infinity,
+    cwd: repoPath || process.cwd()
+  }, function (error, stdout) {
+    if (error) {
+      return done(error);
+    }
+    var output = stdout || '';
+    done(null, output.trim().length === 0);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
